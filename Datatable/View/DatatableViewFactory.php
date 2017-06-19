@@ -13,7 +13,7 @@ namespace Sg\DatatablesBundle\Datatable\View;
 
 use Symfony\Bundle\TwigBundle\TwigEngine;
 use Symfony\Component\Routing\RouterInterface;
-use Symfony\Component\Translation\Translator;
+use Symfony\Component\Translation\TranslatorInterface;
 use Exception;
 
 /**
@@ -61,11 +61,11 @@ class DatatableViewFactory implements DatatableViewFactoryInterface
      * Ctor.
      *
      * @param TwigEngine      $templating    The templating service
-     * @param Translator      $translator    The translator service
+     * @param TranslatorInterface      $translator    The translator service
      * @param RouterInterface $router        The router service
      * @param array           $layoutOptions The default layout options
      */
-    public function __construct(TwigEngine $templating, Translator $translator, RouterInterface $router, array $layoutOptions)
+    public function __construct(TwigEngine $templating, TranslatorInterface $translator, RouterInterface $router, array $layoutOptions)
     {
         $this->templating = $templating;
         $this->translator = $translator;
